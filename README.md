@@ -1,4 +1,13 @@
-# hysteria-install ⚡
+import { useLoaderData } from "react-router"
+
+export async function loader() {
+  return await fakeDb.invoices.findAll();
+}
+
+export default function Invoices() {
+  let invoices = useLoaderData<typeof loader>();
+  // ...
+}# hysteria-install ⚡
 
 ### Hysteria is a powerful, lightning fast and censorship resistant proxy.
 
